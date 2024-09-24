@@ -8,10 +8,10 @@ Solution Overview
 
 The proposed solution consists of the following key components:
 
-•	PDF conversion – We use pdfplumber to convert the input PDF documents into high-resolution images, optimizing the input for the Anthropic Claude model’s vision capabilities
-•	Text extraction with layout awareness – We use pdfplumber to extract the textual content from the original PDF document, enabling cross-validation of the OCR results
-•	Content integration – We combine the extracted text, table cell content, and image descriptions, preserving the original order and structure of the document
-•	Output generation – Lastly, we generate the final output as a structured text file, which can then be chunked into smaller segments to serve as input for a RAG solution
+- PDF conversion – We use pdfplumber to convert the input PDF documents into high-resolution images, optimizing the input for the Anthropic Claude model’s vision capabilities
+- Text extraction with layout awareness – We use pdfplumber to extract the textual content from the original PDF document, enabling cross-validation of the OCR results
+- Content integration – We combine the extracted text, table cell content, and image descriptions, preserving the original order and structure of the document
+- Output generation – Lastly, we generate the final output as a structured text file, which can then be chunked into smaller segments to serve as input for a RAG solution
 
 The following diagram shows the workflow of the proposed solution.
 
@@ -21,11 +21,11 @@ _Figure 1: The diagram illustrates the step-by-step process of the proposed solu
 
 The solution architecture uses a combination of AWS services, including:
 
-•	Amazon Bedrock – We integrate the Anthropic Claude model through Amazon Bedrock to enable the advanced vision and language understanding capabilities required for Chinese OCR
-•	Amazon SageMaker – We use SageMaker Processing jobs to batch process the PDF pages, improving the overall efficiency and scalability of the solution
-•	Amazon Simple Storage Service – Amazon S3 provides storage for the input PDF documents and the processed output
-•	AWS Lambda – Lambda runs code in response to triggers, allowing for serverless processing and integration between other AWS services
-•	Amazon EventBridge – EventBridge invokes the document processing workflow and coordinates the execution of the different steps
+- Amazon Bedrock – We integrate the Anthropic Claude model through Amazon Bedrock to enable the advanced vision and language understanding capabilities required for Chinese OCR
+- Amazon SageMaker – We use SageMaker Processing jobs to batch process the PDF pages, improving the overall efficiency and scalability of the solution
+- Amazon Simple Storage Service – Amazon S3 provides storage for the input PDF documents and the processed output
+- AWS Lambda – Lambda runs code in response to triggers, allowing for serverless processing and integration between other AWS services
+- Amazon EventBridge – EventBridge invokes the document processing workflow and coordinates the execution of the different steps
 
 The following diagram depicts the solution architecture using various AWS services.
 
