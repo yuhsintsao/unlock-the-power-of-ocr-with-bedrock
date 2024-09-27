@@ -15,6 +15,11 @@ To implement this solution, you need the following:
 
 Complete the following steps to create your ECR repository and push the custom Docker image. If you don’t have the AWS CLI and Docker installed, we recommend using AWS Cloud9 to check in the Docker image. 
 
+0. Create a new Dockerfile.
+   ```
+   mkdir -p ./docker && echo -e "FROM python:3.10-slim\nRUN pip3 install boto3==1.34.131 pdfplumber==0.11.2 Jinja2==3.1.4 asyncio\n\nENTRYPOINT [\"python3\"]" > ./docker/Dockerfile
+   ```
+
 1. Run the following command to create your docker image:
    ```
    cd ./docker && docker build -t <your-local-image>:<tag> .
